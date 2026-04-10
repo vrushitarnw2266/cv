@@ -4,6 +4,11 @@ import { motion, useSpring, useMotionValue } from "framer-motion";
 const CustomCursor = () => {
     const [isHovering, setIsHovering] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.matchMedia("(hover: none)").matches);
+    }, []);
 
     // Mouse Position
     const mouseX = useMotionValue(0);

@@ -51,7 +51,7 @@ const Loader = () => {
                 <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-[var(--accent-purple)]/5 rounded-full blur-[140px]" />
             </div>
 
-            <div className="relative z-10 w-full max-w-2xl px-12">
+            <div className="relative z-10 w-full max-w-2xl px-6 md:px-12">
                 <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
                     
                     {/* The Monolith - A geometric animated block */}

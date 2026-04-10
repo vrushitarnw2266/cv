@@ -34,10 +34,10 @@ const Work = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 container mx-auto px-6 py-32"
+        className="relative z-10 container mx-auto px-6 py-12 md:py-32"
       >
         {/* Header */}
-        <div className="max-w-4xl mb-32">
+        <div className="max-w-4xl mb-16 md:mb-32">
           <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
             <div className="w-12 h-[1px] bg-[var(--accent-blue)]" />
             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--accent-blue)]">
@@ -45,7 +45,7 @@ const Work = () => {
             </span>
           </motion.div>
 
-          <h1 className="text-6xl md:text-8xl font-black mb-12 tracking-tighter leading-[0.9]">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-8 md:mb-12 tracking-tighter leading-[1.1] md:leading-[0.9]">
             Selected <br/> <span className="gradient-text">Productions.</span>
           </h1>
 
@@ -55,12 +55,12 @@ const Work = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-32 mb-40">
+        <div className="grid grid-cols-1 gap-16 md:gap-32 mb-24 md:mb-40">
           {projects.map((project, idx) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="flex flex-col lg:flex-row gap-12 lg:items-center group"
+              className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center group"
             >
               {/* Image Showcase */}
               <div className="lg:w-3/5 aspect-video bento-card border-none overflow-hidden relative">
@@ -93,7 +93,7 @@ const Work = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <h2 className="text-4xl md:text-5xl font-black tracking-tighter group-hover:gradient-text transition-all duration-500">
+                  <h2 className="text-2xl md:text-5xl font-black tracking-tighter group-hover:gradient-text transition-all duration-500">
                     {project.title}
                   </h2>
                   <p className="text-[var(--text-secondary)] text-lg leading-relaxed">

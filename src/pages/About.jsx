@@ -74,7 +74,7 @@ const About = () => {
 
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] relative overflow-hidden flex flex-col items-center py-24 px-6 md:px-12 transition-colors duration-300">
+    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] relative overflow-hidden flex flex-col items-center py-12 md:py-24 px-6 md:px-12 transition-colors duration-300">
 
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
@@ -101,7 +101,7 @@ const About = () => {
         {/* Heading */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-10"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-8 md:mb-10"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-b from-[var(--text-primary)] to-[var(--text-secondary)]">
             About
@@ -140,7 +140,7 @@ const About = () => {
         {/* Features */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left mb-24"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 text-left mb-24"
         >
 
           {features.map((item, index) => (
@@ -176,8 +176,8 @@ const About = () => {
 
           <div className="mb-12 text-left">
             <div className="flex items-center gap-3 mb-4">
-              <Briefcase className="text-[var(--accent-blue)]" size={32} />
-              <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+              <Briefcase className="text-[var(--accent-blue)]" size={24} md:size={32} />
+              <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)]">
                 Experience
               </h2>
             </div>
@@ -198,7 +198,7 @@ const About = () => {
                 className="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-2xl p-8 backdrop-blur-md hover:bg-[var(--bg-secondary)]/80 transition-all duration-300"
               >
 
-                <div className="flex flex-col md:flex-row md:justify-between mb-6">
+                <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-6 gap-4">
 
                   <div>
                     <h3 className="text-2xl font-bold text-[var(--text-primary)]">

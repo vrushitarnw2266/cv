@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Sun, Moon, Menu, X, ChevronRight } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
       }`}
     >
       <div className={`max-w-5xl mx-auto glass rounded-2xl transition-all duration-500 ${
-        isScrolled ? "px-6 py-2 shadow-2xl" : "px-8 py-4 shadow-none"
+        isScrolled ? "px-5 py-2 shadow-2xl" : "px-6 py-4 shadow-none"
       }`}>
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -42,7 +42,7 @@ const Navbar = () => {
               <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] flex items-center justify-center text-white text-base">
                 V
               </span>
-              <span className="hidden sm:block group-hover:gradient-text transition-all duration-300">
+              <span className="sm:block group-hover:gradient-text transition-all duration-300">
                 Panchal
               </span>
             </Link>
@@ -111,26 +111,28 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-6 right-6 mt-4 glass rounded-2xl overflow-hidden shadow-2xl"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="md:hidden absolute top-full left-6 right-6 mt-4 glass rounded-3xl overflow-hidden shadow-2xl border border-[var(--border-color)]"
           >
-            <div className="p-4 flex flex-col gap-2">
+            <div className="p-4 flex flex-col gap-2 bg-[var(--bg-secondary)]/50 backdrop-blur-2xl">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.name}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `px-4 py-3 rounded-xl text-base font-semibold transition-all ${
+                    `flex items-center justify-between px-6 py-4 rounded-2xl text-base font-bold transition-all ${
                       isActive 
-                      ? "bg-[var(--accent-blue)]/10 text-[var(--accent-blue)]" 
-                      : "text-[var(--text-secondary)] hover:bg-[var(--hover-bg)]"
+                      ? "bg-[var(--accent-blue)] text-white shadow-lg shadow-[var(--accent-blue)]/20" 
+                      : "text-[var(--text-secondary)] hover:bg-[var(--hover-bg)] hover:text-[var(--text-primary)]"
                     }`
                   }
                 >
                   {link.name}
+                  <ChevronRight size={18} className="opacity-50" />
                 </NavLink>
               ))}
             </div>

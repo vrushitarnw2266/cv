@@ -34,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] relative overflow-hidden flex flex-col justify-center items-center px-6 py-24 md:py-32 transition-colors duration-300">
+    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] relative overflow-hidden flex flex-col justify-center items-center px-6 py-12 md:py-32 transition-colors duration-300">
 
       {/* Background Gradients (Consistent with Home/About/Skills) */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none transition-opacity duration-500">
@@ -46,7 +46,7 @@ const Contact = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="relative z-10 max-w-7xl w-full grid md:grid-cols-2 gap-16 lg:gap-24 items-start"
+        className="relative z-10 max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-start"
       >
 
         {/* ========== LEFT SIDE (Contact Info & Reasons to Connect) ========== */}
@@ -55,7 +55,7 @@ const Contact = () => {
             <span className="px-4 py-1.5 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-color)] text-sm tracking-wider uppercase text-[var(--accent-blue)] font-medium backdrop-blur-sm mb-6 inline-block">
               Let's Connect
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--text-primary)] to-[var(--text-secondary)]">
                 Get in Touch
               </span>
@@ -116,7 +116,7 @@ const Contact = () => {
         {/* ========== RIGHT SIDE (FORM) ========== */}
         <motion.div
           variants={fadeInUp}
-          className="bg-[var(--bg-secondary)] backdrop-blur-xl p-8 md:p-10 rounded-3xl shadow-2xl border border-[var(--border-color)]"
+          className="bg-[var(--bg-secondary)] backdrop-blur-xl p-6 md:p-10 rounded-3xl shadow-2xl border border-[var(--border-color)]"
         >
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-2 uppercase tracking-tight">Send a Message</h2>

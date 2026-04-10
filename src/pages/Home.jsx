@@ -85,7 +85,7 @@ const Home = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 container mx-auto px-6 pt-40 pb-32"
+        className="relative z-10 container mx-auto px-6 pt-24 md:pt-40 pb-20 md:pb-32"
       >
         {/* Hero Section */}
         <div className="flex flex-col items-center text-center mb-40">
@@ -100,7 +100,7 @@ const Home = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-4 mb-8">
-            <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.9] lg:max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tight leading-[1.1] md:leading-[0.9] lg:max-w-4xl mx-auto">
               Designing <span className="gradient-text">Digital</span> Excellence.
             </h1>
             <div className="text-xl md:text-2xl font-medium text-[var(--text-secondary)] h-8">
@@ -145,7 +145,7 @@ const Home = () => {
         </div>
 
         {/* Bento Grid Stats */}
-        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-40">
+        <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-24 md:mb-40">
           {[
             { label: "Execution", value: stats.projectsCompleted, detail: "Projects launched" },
             { label: "Experience", value: stats.yearsExperience, detail: "Year in industry" },
@@ -169,7 +169,7 @@ const Home = () => {
         </motion.div>
 
         {/* Core Services Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-40">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-24 md:mb-40">
           {coreCompetencies.map((item, index) => (
             <motion.div
               key={index}
@@ -202,7 +202,7 @@ const Home = () => {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--accent-blue)]/10 rounded-full blur-[100px] -z-10 animate-pulse" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--accent-purple)]/5 rounded-full blur-[100px] -z-10 animate-pulse" style={{ animationDelay: "2s" }} />
 
-          <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
+          <h2 className="text-3xl md:text-6xl font-black mb-8 leading-tight">
             Ready to build <br/> something <span className="gradient-text">exceptional?</span>
           </h2>
           <Link

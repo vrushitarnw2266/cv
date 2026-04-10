@@ -104,10 +104,10 @@ const Skills = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="relative z-10 container mx-auto px-6 py-32"
+                className="relative z-10 container mx-auto px-6 py-12 md:py-32"
             >
                 {/* Header */}
-                <div className="max-w-4xl mb-32">
+                <div className="max-w-4xl mb-16 md:mb-32">
                     <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
                         <div className="w-12 h-[1px] bg-[var(--accent-blue)]" />
                         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--accent-blue)]">
@@ -115,17 +115,17 @@ const Skills = () => {
                         </span>
                     </motion.div>
 
-                    <h1 className="text-6xl md:text-8xl font-black mb-12 tracking-tighter leading-[0.9]">
+                    <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-8 md:mb-12 tracking-tighter leading-[1.1] md:leading-[0.9]">
                         Advanced <br/> <span className="gradient-text">Competencies.</span>
                     </h1>
 
-                    <p className="text-xl md:text-2xl font-medium text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+                    <p className="text-lg md:text-2xl font-medium text-[var(--text-secondary)] leading-relaxed max-w-2xl">
                         A deliberate selection of modern technologies and tools that I leverage to build scalable, high-performance digital products.
                     </p>
                 </div>
 
                 {/* Bento Categories */}
-                <div className="space-y-24">
+                <div className="space-y-16 md:space-y-24">
                     {categories.map((cat, i) => (
                         <div key={i} className="space-y-12">
                             <motion.div variants={itemVariants} className="flex items-end justify-between border-b border-[var(--border-color)] pb-8 px-4">
@@ -134,7 +134,7 @@ const Skills = () => {
                                         <cat.icon size={24} />
                                     </div>
                                     <div>
-                                        <h2 className="text-3xl font-black tracking-tight">{cat.title}</h2>
+                                        <h2 className="text-2xl md:text-3xl font-black tracking-tight">{cat.title}</h2>
                                         <p className="text-[10px] font-black uppercase tracking-widest text-[var(--text-secondary)]">
                                             {cat.subtitle}
                                         </p>
@@ -142,7 +142,7 @@ const Skills = () => {
                                 </div>
                             </motion.div>
 
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
                                 {cat.skills.map((skill) => {
                                     const info = techIcons[skill];
                                     const Icon = info?.icon || Code;
