@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #050505;
+    --bg-secondary: #0f1115;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --accent-blue: #00e5ff;
+    --accent-blue-rgb: 0, 229, 255;
+    --accent-purple: #9d50bb;
+    --accent-purple-rgb: 157, 80, 187;
+    --card-glow: rgba(0, 229, 255, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --hover-bg: rgba(255, 255, 255, 0.05);
+  }
+
+  .light {
+    --bg-primary: #fcfdfe;
+    --bg-secondary: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-color: rgba(15, 23, 42, 0.08);
+    --accent-blue: #0284c7;
+    --accent-blue-rgb: 2, 132, 199;
+    --accent-purple: #7c3aed;
+    --accent-purple-rgb: 124, 58, 237;
+    --card-glow: rgba(2, 132, 199, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --hover-bg: rgba(15, 23, 42, 0.04);
+    --shadow-premium: 0 10px 30px -10px rgba(2, 132, 199, 0.1), 0 0 20px -5px rgba(124, 58, 237, 0.05);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  @media (hover: none) {
+    body {
+      cursor: auto;
+    }
+  }
+
+  a, button, [role="button"], .bento-card {
+    cursor: none;
+  }
+
+  /* Custom Selection */
+  ::selection {
+    background: var(--accent-blue);
+    color: var(--bg-primary);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl border border-[var(--border-color)];
+    background-color: var(--glass-bg);
+  }
+  
+  .glass-dark {
+    @apply backdrop-blur-xl bg-black/40 border border-white/[0.05];
+  }
+
+  .bento-card {
+    @apply relative overflow-hidden rounded-3xl border border-[var(--border-color)] bg-[var(--bg-secondary)] transition-all duration-500;
+    box-shadow: var(--shadow-premium, none);
+  }
+
+  .bento-card:hover {
+    @apply shadow-2xl;
+    box-shadow: var(--shadow-premium, none), 0 20px 50px -12px var(--card-glow);
+  }
+
+  .noise-bg {
+    position: relative;
+  }
+
+  .noise-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-purple)];
+}
+
+.magnetic-button {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
