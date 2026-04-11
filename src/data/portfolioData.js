@@ -12,8 +12,8 @@ export const personalInfo = {
     long: "I'm an aspiring full-stack developer who has mastered frontend technologies including HTML, CSS, JavaScript, React, Tailwind CSS, and Bootstrap. Currently, I am actively building my backend skills with Node.js and MongoDB to become a complete full-stack developer. My passion lies in creating seamless, responsive user experiences while continually expanding my technical horizons."
   },
   socials: {
-    github: "https://github.com/vrushitarnw22",
-    linkedin: "https://linkedin.com/in/yourusername",
+    github: "https://github.com/vrushitarnw2266",
+    linkedin: "https://linkedin.com/in/vrushita-panchal",
     twitter: "https://twitter.com/yourusername",
     portfolio: "https://your-portfolio.com"
   }
